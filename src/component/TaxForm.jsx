@@ -20,7 +20,7 @@ const TaxForm = ({ setFormToggle,allTax, editData, setEditData}) => {
         try {
      
           
-            const response = await axios.patch(`https://ims-jspr.onrender.com/tax/update_tax/${editData._id}`, data);
+            const response = await axios.patch(`${base_Url}/tax/update_tax/${editData._id}`, data);
             console.log(response);
             setFormToggle(false);
             setData({
@@ -40,7 +40,7 @@ const TaxForm = ({ setFormToggle,allTax, editData, setEditData}) => {
         try {
         
        
-            const response = await axios.post(`https://ims-jspr.onrender.com/tax/create_tax`, data);
+            const response = await axios.post(`${base_Url}/tax/create_tax`, data);
             console.log(response);
             
             setFormToggle(false);

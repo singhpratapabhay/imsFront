@@ -23,7 +23,7 @@ const ManageCustomer = () => {
 
     const allClient = async () => {
         try {
-            const response = await axios.get(`https://ims-jspr.onrender.com/client/allCustomer`);
+            const response = await axios.get(`${base_Url}/client/allCustomer`);
             setViewData(response.data.result)
             setData(response.data.result);
         } catch (error) {
@@ -43,7 +43,7 @@ const ManageCustomer = () => {
     }
 
     const deleteHandler = async (id) => {
-        await axios.delete(`https://ims-jspr.onrender.com/client/delete_Customer/${id}`).then((res) => {
+        await axios.delete(`${base_Url}/client/delete_Customer/${id}`).then((res) => {
             console.log(res.data);
             alert("deleted")
             allClient();

@@ -28,7 +28,7 @@ const GetPurchase = () => {
     const doc = new jsPDF();
     const allPurchase = async () => {
         try {
-            const response = await axios.post(`https://ims-jspr.onrender.com/product_details/find_product_list`, data);
+            const response = await axios.post(`${base_Url}/product_details/find_product_list`, data);
             setReceivedData(response.data.data)
             console.log(response.data.data)
             setCopyData(response.data.data)
@@ -145,7 +145,7 @@ const GetPurchase = () => {
         setCurrent(page);
     }
     const deleteHandler = async (id) => {
-        await axios.delete(`https://ims-jspr.onrender.com/product_details/remove_product_details/${id}`).then((res) => {
+        await axios.delete(`${base_Url}/product_details/remove_product_details/${id}`).then((res) => {
             console.log(res.data);
             alert("deleted")
             allPurchase();

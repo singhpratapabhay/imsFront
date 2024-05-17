@@ -21,7 +21,7 @@ const ManageCategory = () => {
     const [editData, setEditData] = useState("");
     const allCategory = async () => {
         try {
-            const response = await axios.get(`https://ims-jspr.onrender.com/category/findall_category`);
+            const response = await axios.get(`${base_Url}/category/findall_category`);
             setData(response.data.data);
             setViewData(response.data.data)
         } catch (error) {
@@ -39,7 +39,7 @@ const ManageCategory = () => {
     }
 
     const deleteHandler = async (id) => {
-        await axios.delete(`https://ims-jspr.onrender.com/category/${id}`).then((res) => {
+        await axios.delete(`${base_Url}/category/${id}`).then((res) => {
             console.log(res.data);
             alert("deleted")
             allCategory();

@@ -20,7 +20,7 @@ const ManageSuplier = () => {
     const [editData, setEditData] = useState("");
     const allSupplier = async () => {
         try {
-            const response = await axios.get(`https://ims-jspr.onrender.com/supplier/find_supplire`);
+            const response = await axios.get(`${base_Url}/supplier/find_supplire`);
             setData(response.data.product);
             setViewData(response.data.product)
         } catch (error) {
@@ -38,7 +38,7 @@ const ManageSuplier = () => {
     }
 
     const deleteHandler = async (id) => {
-        await axios.delete(`https://ims-jspr.onrender.com/supplier/delete_supplire/${id}`).then((res) => {
+        await axios.delete(`${base_Url}/supplier/delete_supplire/${id}`).then((res) => {
             console.log(res.data);
             alert("deleted")
             allSupplier();

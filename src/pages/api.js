@@ -1,5 +1,5 @@
 
 
-// export const base_Url = "http://localhost:8000";
+export const base_Url = "http://localhost:8000";
 
      

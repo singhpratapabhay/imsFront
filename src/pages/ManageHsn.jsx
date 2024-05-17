@@ -21,7 +21,7 @@ const ManageHsn = () => {
     const [editData, setEditData] = useState("");
     const allHsn = async () => {
         try {
-            const response = await axios.get(`https://ims-jspr.onrender.com/hsn/findall_hsn`);
+            const response = await axios.get(`${base_Url}/hsn/findall_hsn`);
             setData(response.data.data);
             setViewData(response.data.data)
         } catch (error) {
@@ -39,7 +39,7 @@ const ManageHsn = () => {
     }
 
     const deleteHandler = async (id) => {
-        await axios.delete(`https://ims-jspr.onrender.com/hsn/${id}`).then((res) => {
+        await axios.delete(`${base_Url}/hsn/${id}`).then((res) => {
             console.log(res.data);
             alert("deleted")
             allHsn();

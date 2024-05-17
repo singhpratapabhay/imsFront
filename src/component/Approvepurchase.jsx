@@ -23,7 +23,7 @@ const Approvepurchase = () => {
     const doc = new jsPDF();
     const allPurchase = async () => {
         try {
-            const response = await axios.get(`https://ims-jspr.onrender.com/product_details/allpurchase`);
+            const response = await axios.get(`${base_Url}/product_details/allpurchase`);
             console.log(response)
             console.log(response.data.result)
             setData(response.data.result[0].arr.filter((val)=>{
@@ -46,7 +46,7 @@ console.log(data)
         item.status = "Rejected";
         console.log(item)
         try{
-            await axios.patch(`https://ims-jspr.onrender.com/product_details/updateProductstatus/${item._id}`, item);
+            await axios.patch(`${base_Url}/product_details/updateProductstatus/${item._id}`, item);
             alert("Request is Rejected")
             allPurchase();
         }catch(error){
@@ -60,7 +60,7 @@ console.log(data)
         item.status = "Approved";
         console.log(item)
         try{
-            await axios.patch(`https://ims-jspr.onrender.com/product_details/updateProductstatus/${item._id}`, item);
+            await axios.patch(`${base_Url}/product_details/updateProductstatus/${item._id}`, item);
             alert("Request is Approved");
             
             allPurchase();

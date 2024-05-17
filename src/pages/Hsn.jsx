@@ -23,7 +23,7 @@ const Hsn = ({ setFormToggle,allHsn, editData, setEditData}) => {
             try {
          
               
-                const response = await axios.patch(`https://ims-jspr.onrender.com/hsn/update_hsn/${editData._id}`, data);
+                const response = await axios.patch(`${base_Url}/hsn/update_hsn/${editData._id}`, data);
                 console.log(response);
                 setFormToggle(false);
                 setData({
@@ -42,7 +42,7 @@ const Hsn = ({ setFormToggle,allHsn, editData, setEditData}) => {
             try {
             
            
-                const response = await axios.post(`https://ims-jspr.onrender.com/hsn/create_hsn`, data);
+                const response = await axios.post(`${base_Url}/hsn/create_hsn`, data);
                 console.log(response);
                 
                 setFormToggle(false);

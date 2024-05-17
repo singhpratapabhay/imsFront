@@ -16,7 +16,7 @@ const PaymentForm = ({setViewPayment,allPurchase,viewPurchase}) => {
             try {
            
               
-                const response = await axios.post(`https://ims-jspr.onrender.com/product_details/addpayment`, data);
+                const response = await axios.post(`${base_Url}/product_details/addpayment`, data);
                 console.log(response);
                 
                 setViewPayment(false);

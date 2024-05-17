@@ -29,7 +29,7 @@ const GetInvoice = () => {
     const [viewPurchase, setViewPurchase] = useState(null);
     const allPurchase = async () => {
         try {
-            const response = await axios.post(`https://ims-jspr.onrender.com/invoice/find_product_list`, data);
+            const response = await axios.post(`${base_Url}/invoice/find_product_list`, data);
             console.log(response.data.data)
             setReceivedData(response.data.data)
             setCopyData(response.data.data)
@@ -173,7 +173,7 @@ const GetInvoice = () => {
         setSearchKeyWord(e.target.value)
     }
     const deleteHandler = async (id) => {
-        await axios.delete(`https://ims-jspr.onrender.com/invoice/remove_invoice_details/${id}`).then((res) => {
+        await axios.delete(`${base_Url}/invoice/remove_invoice_details/${id}`).then((res) => {
             console.log(res.data);
             alert("deleted")
             allPurchase();

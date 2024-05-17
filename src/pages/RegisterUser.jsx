@@ -16,7 +16,7 @@ const RegisterUser = () => {
 
   const userVerifyHandler = async () => {
     try {
-      const response = await axios.post(`https://ims-jspr.onrender.com/user/create_user`, data);
+      const response = await axios.post(`${base_Url}/user/create_user`, data);
       console.log(response.data); 
       navigate("/");
     } catch (error) {

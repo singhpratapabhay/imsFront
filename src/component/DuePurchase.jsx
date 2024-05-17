@@ -27,7 +27,7 @@ const DuePurchase = () => {
     const [viewToggle, setViewToggle] = useState(false);
     const allPurchase = async () => {
         try {
-            const response = await axios.get(`https://ims-jspr.onrender.com/product_details/allpurchase`);
+            const response = await axios.get(`${base_Url}/product_details/allpurchase`);
            console.log(response.data.result[0].arr)
           let filterData =   response.data.result[0].arr.filter((val,i)=>{
                 return (val.dueAmount>0) && val.paidStatus!=="paid"
@@ -48,7 +48,7 @@ const DuePurchase = () => {
 // const editHandler =async (item) => {
 //     console.log(item.id)
 //     try {
-//         const response = await axios.patch(`https://ims-jspr.onrender.com/invoice/updateProductPaidstatus/${item.id}`, item);
+//         const response = await axios.patch(`${base_Url}/invoice/updateProductPaidstatus/${item.id}`, item);
 //        console.log(response)
 //        allPurchase();
 

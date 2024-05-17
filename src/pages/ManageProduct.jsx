@@ -21,7 +21,7 @@ const ManageProduct = () => {
     const doc = new jsPDF()
     const allProduct = async () => {
         try {
-            const response = await axios.post(`https://ims-jspr.onrender.com/product/all_product`);
+            const response = await axios.post(`${base_Url}/product/all_product`);
             console.log(response.data.result)
             setData(response.data.result);
             setViewData(response.data.result)
@@ -69,7 +69,7 @@ const ManageProduct = () => {
     }
 console.log(data)
     const deleteHandler = async (id) => {
-        await axios.delete(`https://ims-jspr.onrender.com/product/delete_product/${id}`).then((res) => {
+        await axios.delete(`${base_Url}/product/delete_product/${id}`).then((res) => {
             console.log(res.data);
             alert("deleted")
             allProduct();

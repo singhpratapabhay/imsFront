@@ -32,7 +32,7 @@ const CustomerForm = ({ setFormToggle, allClient, editData, setEditData }) => {
             formData.append('customer_address', data.customer_address);
             formData.append('image', image); // Append the image directly
             console.log(image)
-            const response = await axios.post(`https://ims-jspr.onrender.com/client/add_customer`, formData, {
+            const response = await axios.post(`${base_Url}/client/add_customer`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -66,7 +66,7 @@ const CustomerForm = ({ setFormToggle, allClient, editData, setEditData }) => {
             formData.append('customer_address', data.customer_address);
             formData.append('image', image); // Append the image directly
           
-            const response = await axios.put(`https://ims-jspr.onrender.com/client/updateCustomer/${id}`, formData, {
+            const response = await axios.put(`${base_Url}/client/updateCustomer/${id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

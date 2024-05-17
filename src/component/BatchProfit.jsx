@@ -21,7 +21,7 @@ const BatchProfit = () => {
 
     const allUnits = async () => {
         try {
-            const response = await axios.get(`https://ims-jspr.onrender.com/noOfUnit/noOfUnit`);
+            const response = await axios.get(`${base_Url}/noOfUnit/noOfUnit`);
             console.log(response.data.data)
             setData(response.data.data);
             setViewData(response.data.data);

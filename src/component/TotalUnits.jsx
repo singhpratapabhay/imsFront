@@ -33,7 +33,7 @@ const TotalUnits = () => {
       }
     const allUnits = async () => {
         try {
-            const response = await axios.get(`https://ims-jspr.onrender.com/noOfUnit/noOfUnit`);
+            const response = await axios.get(`${base_Url}/noOfUnit/noOfUnit`);
            
             const transformedObject = getTotalQuantities(response.data.data);
             setData(transformedObject);

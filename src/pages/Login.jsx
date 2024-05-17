@@ -10,7 +10,7 @@ const Login = () => {
   const userVerifyHandler = async () => {
     try {
     
-      const response = await axios.post(`https://ims-jspr.onrender.com/user/loginUser`, data);
+      const response = await axios.post(`${base_Url}/user/loginUser`, data);
       console.log(response)
 
       if (response) {

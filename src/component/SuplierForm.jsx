@@ -36,7 +36,7 @@ const SuplierForm = ({ data1, setFormToggle,allSupplier, editData, setEditData})
                   alert("mail already exist");
                   return;
                 }
-                const response = await axios.patch(`https://ims-jspr.onrender.com/supplier/update_supplire/${editData._id}`, data);
+                const response = await axios.patch(`${base_Url}/supplier/update_supplire/${editData._id}`, data);
                 console.log(response);
                 setFormToggle(false);
                 setData({
@@ -65,7 +65,7 @@ const SuplierForm = ({ data1, setFormToggle,allSupplier, editData, setEditData})
                       alert("mail already exist");
                       return;
                     }
-                const response = await axios.post(`https://ims-jspr.onrender.com/supplier/create_supplier`, data);
+                const response = await axios.post(`${base_Url}/supplier/create_supplier`, data);
                 console.log(response);
                 
                 setFormToggle(false);

@@ -22,7 +22,7 @@ const ManagerTax = () => {
 
     const allTax = async () => {
         try {
-            const response = await axios.get(`https://ims-jspr.onrender.com/tax/find_tax`);
+            const response = await axios.get(`${base_Url}/tax/find_tax`);
             setViewData(response.data.product)
             setData(response.data.product);
         } catch (error) {
@@ -42,7 +42,7 @@ const ManagerTax = () => {
     }
 
     const deleteHandler = async (id) => {
-        await axios.delete(`https://ims-jspr.onrender.com/tax/delete_tax/${id}`).then((res) => {
+        await axios.delete(`${base_Url}/tax/delete_tax/${id}`).then((res) => {
             console.log(res.data);
             alert("deleted")
             allTax();

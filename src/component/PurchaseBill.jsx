@@ -26,7 +26,7 @@ console.log(viewPurchase)
 
   // const purchaseNoHandler= async ()=>{
   
-  //   const response = await   axios.post(`https://ims-jspr.onrender.com/product_details/allPurchase_no`, {purchase_no: viewPurchase});
+  //   const response = await   axios.post(`${base_Url}/product_details/allPurchase_no`, {purchase_no: viewPurchase});
   //   setEditData(response.data.data);
   //   console.log(response.data.data)
     
@@ -91,7 +91,7 @@ console.log(viewPurchase)
 //     jsPdf.html(htmlElement, opt);
 // };
   const deleteHandler = async (id) => {
-    await axios.delete(`https://ims-jspr.onrender.com/product_details/remove_product_details/${id}`).then((res) => {
+    await axios.delete(`${base_Url}/product_details/remove_product_details/${id}`).then((res) => {
         console.log(res.data);
         // purchaseNoHandler();
 

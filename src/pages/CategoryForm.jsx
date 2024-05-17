@@ -24,7 +24,7 @@ const CategoryForm = ({ setFormToggle,allCategory, editData, setEditData}) => {
             try {
          
               
-                const response = await axios.patch(`https://ims-jspr.onrender.com/category/update_catdelete_categoryegory/${editData._id}`, data);
+                const response = await axios.patch(`${base_Url}/category/update_catdelete_categoryegory/${editData._id}`, data);
                 console.log(response);
                 setFormToggle(false);
                 setData({
@@ -43,7 +43,7 @@ const CategoryForm = ({ setFormToggle,allCategory, editData, setEditData}) => {
             try {
             
            
-                const response = await axios.post(`https://ims-jspr.onrender.com/category/create_category`, data);
+                const response = await axios.post(`${base_Url}/category/create_category`, data);
                 console.log(response);
                 
                 setFormToggle(false);

@@ -21,7 +21,7 @@ const ProductForm = ({setFormToggle,allProduct, editData, setEditData}) => {
     });
     const allTax = async () => {
       try {
-        const response = await axios.get(`https://ims-jspr.onrender.com/tax/find_tax`);
+        const response = await axios.get(`${base_Url}/tax/find_tax`);
         setTax(response.data.product);
       } catch (error) {
         console.log(error);
@@ -30,7 +30,7 @@ const ProductForm = ({setFormToggle,allProduct, editData, setEditData}) => {
     
     const hsnDetailsHandler = async()=>{
       try{
-        const response = await axios.get(`https://ims-jspr.onrender.com/hsn/findall_hsn`, data);
+        const response = await axios.get(`${base_Url}/hsn/findall_hsn`, data);
      setHsnDetails(response.data.data)
     
       }catch(error){
@@ -47,7 +47,7 @@ const ProductForm = ({setFormToggle,allProduct, editData, setEditData}) => {
   const supplierDetailsHandler = async()=>{
    
     try{
-      const response = await axios.get(`https://ims-jspr.onrender.com/product/category_Supplire`);
+      const response = await axios.get(`${base_Url}/product/category_Supplire`);
       setCategoryDetails(response.data.category);
       setSupplierDetails(response.data.suppliers);
     }catch(error){
@@ -66,7 +66,7 @@ console.log(editData, categoryDetails)
         if(editData){
             try {
          
-                const response = await axios.patch(`https://ims-jspr.onrender.com/product/update_product/${editData._id}`, data);
+                const response = await axios.patch(`${base_Url}/product/update_product/${editData._id}`, data);
                 console.log(response);
                
                 setData({
@@ -91,7 +91,7 @@ console.log(editData, categoryDetails)
             try {
             
               
-                const response = await axios.post(`https://ims-jspr.onrender.com/product/add`, data);
+                const response = await axios.post(`${base_Url}/product/add`, data);
                 console.log(response);
                 
                 setFormToggle(false);

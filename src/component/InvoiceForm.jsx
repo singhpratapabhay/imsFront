@@ -60,7 +60,7 @@ let purchaseNo = `KASP-${+rray+1}`;
   const [sale, setSale] =useState(null)
   const allProduct = async () => {
     try {
-        const response = await axios.post(`https://ims-jspr.onrender.com/product/all_product`);
+        const response = await axios.post(`${base_Url}/product/all_product`);
         setProductDetails(response.data.result)
     } catch (error) {
         console.log(error);
@@ -69,7 +69,7 @@ let purchaseNo = `KASP-${+rray+1}`;
   const purchaseFormHandler = async (arr) => {
     try {
     
-      const response = await axios.post(`https://ims-jspr.onrender.com/invoice/invoices`, [arr]);
+      const response = await axios.post(`${base_Url}/invoice/invoices`, [arr]);
       alert('Purchase Request done Successfully');
       setFormToggle(false);
       allPurchase();
@@ -108,7 +108,7 @@ let purchaseNo = `KASP-${+rray+1}`;
   const allPoductQuantity = async (e) => {
     console.log("hello")
     try {
-        const response = await axios.get(`https://ims-jspr.onrender.com/noOfUnit/noOfUnit`);
+        const response = await axios.get(`${base_Url}/noOfUnit/noOfUnit`);
         console.log(response.data.data)
       if( Object.keys(response.data.data).length){
         let requiredProduct = Object.entries(response.data.data).filter(([productName, value])=>{
@@ -151,7 +151,7 @@ useEffect(()=>{
 
   const productDetailsHandler = async () => {
     try {
-      const response = await axios.post(`https://ims-jspr.onrender.com/invoice/invoicesDetails`, data);
+      const response = await axios.post(`${base_Url}/invoice/invoicesDetails`, data);
       setProduct(response.data.product);
       setProductDetails(response.data.result);
     } catch (error) {
@@ -161,7 +161,7 @@ useEffect(()=>{
 
   const allTax = async () => {
     try {
-      const response = await axios.get(`https://ims-jspr.onrender.com/tax/find_tax`);
+      const response = await axios.get(`${base_Url}/tax/find_tax`);
       setTax(response.data.product);
     } catch (error) {
       console.log(error);
@@ -171,7 +171,7 @@ useEffect(()=>{
 
   const allClient = async () => {
     try {
-      const response = await axios.get(`https://ims-jspr.onrender.com/client/allCustomer`);
+      const response = await axios.get(`${base_Url}/client/allCustomer`);
    let customerDetails = response.data.result.map((val)=>{
         return val.customer_email;
       })
@@ -683,7 +683,7 @@ const batchUnits = async (e)=>{
 
 const allUnits = async () => {
   try {
-      const response = await axios.get(`https://ims-jspr.onrender.com/noOfUnit/noOfUnit`);
+      const response = await axios.get(`${base_Url}/noOfUnit/noOfUnit`);
       console.log(response.data.data)
       // localStorage.setItem('purchaseObject', JSON.stringify(arr));
       setPurchase(response.data.data)
